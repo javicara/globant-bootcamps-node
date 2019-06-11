@@ -1,7 +1,13 @@
+"use strict";
 const profilesMock = require('../../../test-helpers/profiles');
 var _ = require('lodash');
+const Joi = require("joi");
 
 
+
+module.exports= {
+    actionGetOneById:actionGetOneById,
+}
 
 
 function actionGetOneById(id) {
@@ -19,6 +25,6 @@ return result;
 
 }
 
-module.exports= {
-    actionGetOneById:actionGetOneById
-}
+
+
+

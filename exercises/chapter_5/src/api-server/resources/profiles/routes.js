@@ -3,6 +3,7 @@
 
 const config = require('../../core/config');
 const profiles = require('./controllers');
+const validations= require('../validations')
 
 module.exports = function initRoutes(app) {
     // Users resource base route
@@ -10,6 +11,7 @@ module.exports = function initRoutes(app) {
 
 
     //console.log(basePath);
-    app.get(`${basePath}/:idProfile`,profiles.v1.getOneById)
-    app.get(basePath, profiles.v1.getAll);
+    app.get(`${basePath}/:idProfile`,validations.validateProfileId ,profiles.v1.getOneById)
+    app.get(basePath,profiles.v1.getAll);
 };
+

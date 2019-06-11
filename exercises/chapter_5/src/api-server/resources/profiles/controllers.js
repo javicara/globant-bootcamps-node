@@ -20,7 +20,7 @@ module.exports = {
  * @param {Object} res - http.ServerResponse
  */
 function getAll(req, res) {
-    console.log('hey apple profiles');
+    
     res.status(200).send(profilesMock.ALL_PROFILES);
 }
 
@@ -29,13 +29,18 @@ function getOneById(req,res){
     const {idProfile} = req.params;
     //console.log('hola,',idProfile);
     var a =actions.actionGetOneById(Number(idProfile));
+    
+   
+
+
+// Esto seria sin las validaciones
     if (a==undefined){
         res.status(404).send('No se encuentra el id buscado');
 
     }else if (a!= undefined){
         res.status(200).send(a);
 
-    }
+    } 
 
 
 }

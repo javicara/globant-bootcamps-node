@@ -31,7 +31,7 @@ function getAll(req, res) {
     if (a == undefined) {
         res.status(404).send('No se encuentra el id buscado');
 
-    }else if (a!= undefined) {
+    }else if (a != undefined) {
         res.status(200).send(a);
 
     }
